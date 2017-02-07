@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url ,include
 from django.contrib import admin
+from django.shortcuts import HttpResponse
+from shibli import call
 
 urlpatterns = [
+	url(r'^$',call),
     url(r'^admin/', admin.site.urls),
     url(r'^account/',include('account.urls'))
 ]

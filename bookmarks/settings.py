@@ -114,10 +114,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+USE_I18N = False
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+
 
 USE_L10N = True
 
@@ -132,6 +133,11 @@ from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user':lambda u:reverse_lazy('user_detail',args=[u.username])
+    }
+
 
 #EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

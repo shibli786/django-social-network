@@ -13,9 +13,10 @@ urlpatterns = [
 
 
 
+	url(r'^register/$', views.register,name='register'), 
 
 	url(r'^images/$', views.dashboard,name='images'), 
-	url(r'^/people/$', views.dashboard,name='people'), 
+	url(r'^people/$', views.dashboard,name='people'), 
 
 
 	url(r'^$', views.dashboard,name='dashboard'), 

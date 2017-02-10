@@ -24,9 +24,13 @@ SECRET_KEY = 'rgv7u&*)jn(6a%3%o!s-@*n+86^r*0py5_%$90zz0apz+ghup('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+DEBUG = TEMPLATE_DEBUG = True  
+ALLOWED_HOSTS = ['mysite.com','127.0.0.1','172.18.2.41']
 
-ALLOWED_HOSTS = []
 
+MEDIA_ROOT = '/images/'
+
+MEDIA_URL = '/images/'
 
 # Application definition
 
@@ -38,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'django.contrib.admin',
+    'social_django',
+    'images',
+    'sorl.thumbnail',
 
 ]
 
@@ -58,6 +65,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
+
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -131,3 +139,19 @@ EMAIL_HOST_USER = 'syed.shibli@daffodilsw.com'
 EMAIL_HOST_PASSWORD = 'shibli0981'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.facebook.FacebookOAuth2',
+    )
+
+
+SOCIAL_AUTH_TWITTER_KEY='FKqmzcM7C39f4XUqBDlu5LZUT'
+SOCIAL_AUTH_TWITTER_SECRET='Aw6HftvrOg6fp7Fbp0EkcZfcReQAfstV5eytb4j4MDTD9fIrfB'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY='999638732709-cnh121pm23dlndm6fo3u3tao4bjul71c.apps.googleusercontent.com'
+
+SOCIAL_AUTH_GOOGLE__OAUTH2_SECRET='Tp4uJfRFYG7hxaIO8pwP9p7-'

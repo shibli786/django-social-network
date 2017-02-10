@@ -21,5 +21,7 @@ from shibli import call
 urlpatterns = [
 	url(r'^$',call),
     url(r'^admin/', admin.site.urls),
-    url(r'^account/',include('account.urls'))
+    url(r'^account/',include('account.urls')),
+    url(r'^social-auth/',include('social_django.urls',namespace='social')),
+    url(r'^images/',include('images.urls',namespace ='images')),
 ]

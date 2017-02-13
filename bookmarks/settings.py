@@ -142,7 +142,7 @@ ABSOLUTE_URL_OVERRIDES = {
 #EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'syed.shibli@daffodilsw.com'
-EMAIL_HOST_PASSWORD = 'shibli0981'
+EMAIL_HOST_PASSWORD = '7986786567'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
